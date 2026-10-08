@@ -1,0 +1,1660 @@
+{
+  "courses": [
+    {
+      "id": "html-course",
+      "title": "HTML: Estructura Web",
+      "description": "Domina la estructura de páginas web desde cero. Aprende etiquetas semánticas, formularios, tablas y accesibilidad.",
+      "technology": "html",
+      "icon": "🏗️",
+      "color": "#ff6b35",
+      "finalProject": {
+        "id": "html-final-portfolio",
+        "title": "Mi Portafolio Personal",
+        "description": "Crea una página de portafolio completa con header, navegación, secciones de proyectos, formulario de contacto y footer usando HTML semántico.",
+        "xpReward": 200,
+        "requirements": [
+          {
+            "id": "req-1",
+            "text": "Usa <header> con un <h1> con tu nombre",
+            "hint": "<header><h1>Mi Nombre</h1></header>",
+            "validationRegex": "<header>[\\s\\S]*<h1>[\\s\\S]*</h1>[\\s\\S]*</header>"
+          },
+          {
+            "id": "req-2",
+            "text": "Crea un <nav> con al menos 3 enlaces",
+            "hint": "<nav><a href=\"#\">...</a></nav>",
+            "validationRegex": "<nav>[\\s\\S]*<a[^>]*>[\\s\\S]*<a[^>]*>[\\s\\S]*<a[^>]*>[\\s\\S]*</nav>"
+          },
+          {
+            "id": "req-3",
+            "text": "Agrega una sección <section> con un <h2> \"Sobre mí\"",
+            "hint": "<section><h2>Sobre mí</h2>...</section>",
+            "validationRegex": "<section>[\\s\\S]*<h2>[\\s\\S]*Sobre mí[\\s\\S]*</h2>[\\s\\S]*</section>"
+          },
+          {
+            "id": "req-4",
+            "text": "Crea otra <section> con <h2> \"Proyectos\" y una lista <ul> de proyectos",
+            "hint": "<section><h2>Proyectos</h2><ul><li>...</li></ul></section>",
+            "validationRegex": "<section>[\\s\\S]*<h2>[\\s\\S]*Proyectos[\\s\\S]*</h2>[\\s\\S]*<ul>[\\s\\S]*</ul>[\\s\\S]*</section>"
+          },
+          {
+            "id": "req-5",
+            "text": "Agrega un <form> de contacto con input de email y un textarea",
+            "hint": "<form><input type=\"email\"><textarea></textarea></form>",
+            "validationRegex": "<form>[\\s\\S]*<input[^>]*type\\s*=\\s*\"email\"[\\s\\S]*<textarea[\\s\\S]*</form>"
+          },
+          {
+            "id": "req-6",
+            "text": "Cierra con un <footer> que contenga tu nombre y año",
+            "hint": "<footer>...</footer>",
+            "validationRegex": "<footer>[\\s\\S]*</footer>"
+          },
+          {
+            "id": "req-7",
+            "text": "Usa al menos 2 imágenes con <img> y atributo alt",
+            "hint": "<img src=\"...\" alt=\"...\">",
+            "validationRegex": "<img[^>]*alt\\s*=\\s*\"[^\"]*\"[\\s\\S]*<img[^>]*alt\\s*=\\s*\"[^\"]*\""
+          }
+        ],
+        "starterCode": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Mi Portafolio</title>\n</head>\n<body>\n\n  <!-- 1. Header con tu nombre -->\n\n  <!-- 2. Navegación -->\n\n  <!-- 3. Sección Sobre mí -->\n\n  <!-- 4. Sección Proyectos -->\n\n  <!-- 5. Formulario de contacto -->\n\n  <!-- 6. Footer -->\n\n</body>\n</html>"
+      },
+      "modules": [
+        {
+          "id": "html-basics",
+          "title": "Estructura Básica",
+          "description": "Aprende la anatomía de una página web",
+          "order": 1,
+          "xpReward": 50,
+          "challenges": [
+            {
+              "id": "html-hello-world",
+              "type": "code",
+              "title": "Tu Primera Página",
+              "instructions": "Crea una página HTML básica con la etiqueta `<!DOCTYPE html>`, `<html>`, `<head>` y `<body>`. Dentro del body, agrega un `<h1>` que diga \"Hola Mundo\".",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Mi Primera Página</title>\n</head>\n<body>\n  <!-- Escribe tu código aquí -->\n  \n</body>\n</html>",
+              "hints": [
+                "Usa la etiqueta <h1> para el título principal",
+                "El texto va entre <h1> y </h1>"
+              ],
+              "rewardXP": 10,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "<h1>\\s*Hola Mundo\\s*</h1>"
+            },
+            {
+              "id": "html-headings",
+              "type": "code",
+              "title": "Jerarquía de Títulos",
+              "instructions": "Crea una jerarquía: `<h1>` con \"Mi Blog\", `<h2>` con \"Primer Artículo\" y `<h3>` con \"Introducción\".",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Mi Blog</title>\n</head>\n<body>\n  \n</body>\n</html>",
+              "hints": [
+                "h1 > h2 > h3 de mayor a menor importancia"
+              ],
+              "rewardXP": 15,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "<h1>.*Mi Blog.*</h1>[\\s\\S]*<h2>.*Primer Artículo.*</h2>[\\s\\S]*<h3>.*Introducción.*</h3>"
+            },
+            {
+              "id": "html-quiz-tags",
+              "type": "quiz",
+              "title": "Quiz: Etiquetas Básicas",
+              "instructions": "¿Cuál etiqueta se usa para el título más importante de una página?",
+              "options": [
+                "<h6>",
+                "<h1>",
+                "<title>",
+                "<header>"
+              ],
+              "correctAnswer": 1,
+              "explanation": "<h1> es el título de mayor jerarquía y se usa para el título principal.",
+              "rewardXP": 10,
+              "difficulty": "beginner"
+            },
+            {
+              "id": "html-paragraphs",
+              "type": "code",
+              "title": "Párrafos y Texto",
+              "instructions": "Agrega dos párrafos `<p>`: \"Bienvenido a mi página\" y \"Esta es mi primera web\".",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Mi Página</title>\n</head>\n<body>\n  <h1>Mi Página Web</h1>\n  \n</body>\n</html>",
+              "hints": [
+                "Cada párrafo necesita su propio <p></p>"
+              ],
+              "rewardXP": 15,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "<p>\\s*Bienvenido a mi página\\s*</p>[\\s\\S]*<p>\\s*Esta es mi primera web\\s*</p>"
+            },
+            {
+              "id": "html-fill-structure",
+              "type": "fill-blank",
+              "title": "Completa la Estructura",
+              "instructions": "Completa la estructura básica de una página HTML con las etiquetas correctas.",
+              "code": "<!DOCTYPE html>\n<html>\n<head>\n  <{{blank1}} >Mi Pagina</{{blank1}}>\n</head>\n<body>\n  <{{blank2}} >Hola Mundo</{{blank2}}>\n  <{{blank3}} >Este es un parrafo</{{blank3}}>\n</body>\n</html>",
+              "blanks": [
+                {
+                  "id": "blank1",
+                  "answer": "title",
+                  "hint": "Etiqueta para el título de la página (no el título visible)"
+                },
+                {
+                  "id": "blank2",
+                  "answer": "h1",
+                  "hint": "Etiqueta para el título más importante"
+                },
+                {
+                  "id": "blank3",
+                  "answer": "p",
+                  "hint": "Etiqueta para párrafos de texto"
+                }
+              ],
+              "hints": [
+                "Piensa en las etiquetas más básicas de HTML"
+              ],
+              "rewardXP": 15,
+              "difficulty": "beginner"
+            }
+          ]
+        },
+        {
+          "id": "html-links-media",
+          "title": "Enlaces y Multimedia",
+          "description": "Navegación e imágenes en la web",
+          "order": 2,
+          "xpReward": 60,
+          "challenges": [
+            {
+              "id": "html-links",
+              "type": "code",
+              "title": "Enlaces y Navegación",
+              "instructions": "Crea un enlace que diga \"Visita Google\" apuntando a \"https://www.google.com\" que se abra en nueva pestaña.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>Mis Enlaces</h1>\n  \n</body>\n</html>",
+              "hints": [
+                "Usa target=\"_blank\" para nueva pestaña",
+                "El atributo href define la URL"
+              ],
+              "rewardXP": 20,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "<a[^>]*href\\s*=\\s*\"https?://www\\.google\\.com\"[^>]*target\\s*=\\s*\"_blank\"[^>]*>.*Visita Google.*</a>"
+            },
+            {
+              "id": "html-images",
+              "type": "code",
+              "title": "Imágenes",
+              "instructions": "Agrega una imagen con src \"https://via.placeholder.com/300\" y alt \"Mi foto de ejemplo\".",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>Galería</h1>\n  \n</body>\n</html>",
+              "hints": [
+                "La etiqueta <img> no tiene cierre",
+                "El atributo alt es obligatorio para accesibilidad"
+              ],
+              "rewardXP": 20,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "<img[^>]*src\\s*=\\s*\"https?://via\\.placeholder\\.com/300\"[^>]*alt\\s*=\\s*\"Mi foto de ejemplo\""
+            },
+            {
+              "id": "html-quiz-attributes",
+              "type": "quiz",
+              "title": "Quiz: Atributos",
+              "instructions": "¿Qué atributo de <a> hace que el enlace se abra en una nueva pestaña?",
+              "options": [
+                "href=\"_blank\"",
+                "target=\"_blank\"",
+                "open=\"new\"",
+                "window=\"new\""
+              ],
+              "correctAnswer": 1,
+              "explanation": "target=\"_blank\" es el atributo estándar para abrir enlaces en nueva pestaña.",
+              "rewardXP": 10,
+              "difficulty": "beginner"
+            },
+            {
+              "id": "html-video",
+              "type": "code",
+              "title": "Video Incrustado",
+              "instructions": "Crea un elemento de video con controles, usando \"video.mp4\" como fuente.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>Mi Video</h1>\n  \n</body>\n</html>",
+              "hints": [
+                "Usa la etiqueta <video> con el atributo controls",
+                "La fuente va en <source> o directamente en src"
+              ],
+              "rewardXP": 20,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "<video[^>]*controls[^>]*>.*<source[^>]*video\\.mp4.*</video>|<video[^>]*src\\s*=\\s*\"video\\.mp4\"[^>]*controls"
+            }
+          ]
+        },
+        {
+          "id": "html-semantic",
+          "title": "HTML Semántico",
+          "description": "Estructura profesional y accesible",
+          "order": 3,
+          "xpReward": 75,
+          "challenges": [
+            {
+              "id": "html-semantic-tags",
+              "type": "code",
+              "title": "Estructura Semántica",
+              "instructions": "Reemplaza los <div> con etiquetas semánticas: `<header>`, `<nav>`, `<main>`, `<footer>`.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <div><h1>Mi Sitio</h1></div>\n  <div><a href=\"#\">Inicio</a></div>\n  <div><p>Contenido</p></div>\n  <div><p>&copy; 2024</p></div>\n</body>\n</html>",
+              "hints": [
+                "<header> para encabezado",
+                "<nav> para navegación",
+                "<main> para contenido principal"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "<header>[\\s\\S]*</header>[\\s\\S]*<nav>[\\s\\S]*</nav>[\\s\\S]*<main>[\\s\\S]*</main>[\\s\\S]*<footer>[\\s\\S]*</footer>"
+            },
+            {
+              "id": "html-lists",
+              "type": "code",
+              "title": "Listas",
+              "instructions": "Crea una lista desordenada con 3 elementos: \"HTML\", \"CSS\" y \"JavaScript\".",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>Mis Tecnologías</h1>\n  \n</body>\n</html>",
+              "hints": [
+                "<ul> para lista desordenada",
+                "<li> para cada elemento"
+              ],
+              "rewardXP": 20,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "<ul>[\\s\\S]*<li>\\s*HTML\\s*</li>[\\s\\S]*<li>\\s*CSS\\s*</li>[\\s\\S]*<li>\\s*JavaScript\\s*</li>[\\s\\S]*</ul>"
+            },
+            {
+              "id": "html-table",
+              "type": "code",
+              "title": "Tablas de Datos",
+              "instructions": "Crea una tabla con encabezados \"Nombre\" y \"Edad\", y una fila con \"Ana\" y \"15\".",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>Estudiantes</h1>\n  \n</body>\n</html>",
+              "hints": [
+                "<table> contenedor",
+                "<tr> fila",
+                "<th> encabezado",
+                "<td> dato"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "<table>[\\s\\S]*<th>.*Nombre.*</th>[\\s\\S]*<th>.*Edad.*</th>[\\s\\S]*<td>.*Ana.*</td>[\\s\\S]*<td>.*15.*</td>[\\s\\S]*</table>"
+            },
+            {
+              "id": "html-form",
+              "type": "code",
+              "title": "Formularios",
+              "instructions": "Crea un formulario con input de texto (name=\"username\"), input de email (name=\"email\") y botón submit.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>Registro</h1>\n  \n</body>\n</html>",
+              "hints": [
+                "<form> contenedor",
+                "type=\"email\" valida automáticamente"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "<form>[\\s\\S]*<input[^>]*type\\s*=\\s*\"text\"[^>]*name\\s*=\\s*\"username\"[^>]*>[\\s\\S]*<input[^>]*type\\s*=\\s*\"email\"[^>]*name\\s*=\\s*\"email\"[^>]*>[\\s\\S]*<button[^>]*type\\s*=\\s*\"submit\"[^>]*>[\\s\\S]*</form>"
+            },
+            {
+              "id": "html-bug-fix",
+              "type": "bug-fix",
+              "title": "Encuentra el Error",
+              "instructions": "El siguiente código tiene errores de sintaxis. Encuéntralos y corrígelos.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <h1>Mi Página<h1>\n  <p>Este es un párrafo\n  <img src=\"foto.jpg\">\n  <a href=\"https://ejemplo.com\">Enlace<a>\n</body>\n</html>",
+              "hints": [
+                "Revisa las etiquetas de cierre",
+                "¿Todas las etiquetas están cerradas correctamente?"
+              ],
+              "rewardXP": 30,
+              "difficulty": "intermediate",
+              "validationType": "contains",
+              "validation": "<h1>Mi Página</h1>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "css-course",
+      "title": "CSS: Diseño Visual",
+      "description": "Aprende a dar estilo a tus páginas web. Colores, layouts, animaciones y diseño responsivo.",
+      "technology": "css",
+      "icon": "🎨",
+      "color": "#00b4d8",
+      "finalProject": {
+        "id": "css-final-landing",
+        "title": "Landing Page Moderna",
+        "description": "Diseña una landing page completa con hero section, tarjetas de características, testimonios y footer responsivo.",
+        "xpReward": 250,
+        "requirements": [
+          {
+            "id": "req-1",
+            "text": "Crea un hero section con fondo de color, título grande y subtítulo",
+            "hint": "Usa background, padding, text-align: center",
+            "validationRegex": "\\.hero|\\.banner"
+          },
+          {
+            "id": "req-2",
+            "text": "Diseña 3 tarjetas de características usando Flexbox o Grid",
+            "hint": "display: flex o display: grid",
+            "validationRegex": "display\\s*:\\s*(flex|grid)"
+          },
+          {
+            "id": "req-3",
+            "text": "Aplica border-radius a las tarjetas para esquinas redondeadas",
+            "hint": "border-radius: 8px",
+            "validationRegex": "border-radius"
+          },
+          {
+            "id": "req-4",
+            "text": "Agrega transiciones o hover effects a los botones",
+            "hint": "transition: ... o :hover",
+            "validationRegex": "transition|:hover"
+          },
+          {
+            "id": "req-5",
+            "text": "Haz el diseño responsivo con al menos una media query",
+            "hint": "@media (max-width: ...)",
+            "validationRegex": "@media"
+          },
+          {
+            "id": "req-6",
+            "text": "Usa un sistema de colores consistente (mínimo 3 colores)",
+            "hint": "Define variables CSS o usa colores hex consistentes",
+            "validationRegex": "#[0-9a-fA-F]{3,6}"
+          },
+          {
+            "id": "req-7",
+            "text": "Incluye una sección de testimonios con estrellas de valoración",
+            "hint": "Usa caracteres ★ o íconos",
+            "validationRegex": "★|star|testimonial"
+          }
+        ],
+        "starterCode": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Landing Page</title>\n  <style>\n    /* Reset básico */\n    * { margin: 0; padding: 0; box-sizing: border-box; }\n    body { font-family: sans-serif; }\n\n    /* 1. Hero Section */\n\n    /* 2. Tarjetas de características */\n\n    /* 3. Estilos de tarjetas */\n\n    /* 4. Botones con hover */\n\n    /* 5. Media query responsiva */\n\n    /* 6. Sistema de colores */\n\n    /* 7. Testimonios */\n  </style>\n</head>\n<body>\n\n  <!-- Hero Section -->\n  <section class=\"hero\">\n    <h1>Producto Increíble</h1>\n    <p>La solución que estabas buscando</p>\n    <button>Comenzar</button>\n  </section>\n\n  <!-- Características -->\n  <section class=\"features\">\n    <div class=\"card\">\n      <h3>Rápido</h3>\n      <p>Velocidad ultrarrápida</p>\n    </div>\n    <div class=\"card\">\n      <h3>Seguro</h3>\n      <p>Protección total</p>\n    </div>\n    <div class=\"card\">\n      <h3>Moderno</h3>\n      <p>Diseño actualizado</p>\n    </div>\n  </section>\n\n  <!-- Testimonios -->\n  <section class=\"testimonials\">\n    <h2>Lo que dicen</h2>\n  </section>\n\n</body>\n</html>"
+      },
+      "modules": [
+        {
+          "id": "css-basics",
+          "description": "Selectores, colores y tipograf�a",
+          "challenges": [
+            {
+              "id": "css-colors",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    /* Tus estilos aqu� */\n  </style>\n</head>\n<body>\n  <h1>BitFlow</h1>\n  <p>Aprende a programar</p>\n</body>\n</html>",
+              "instructions": "Dentro de <style>, cambia el color del h1 a #00ff88 y el fondo del body a #0a0a0f.",
+              "rewardXP": 15,
+              "validationType": "regex",
+              "hints": [
+                "color para texto, background para fondo"
+              ],
+              "difficulty": "beginner",
+              "title": "Colores y Fondos",
+              "validation": "h1\\s*\\{[^}]*color\\s*:\\s*#00ff88|body\\s*\\{[^}]*background[^}]*#0a0a0f"
+            },
+            {
+              "id": "css-selectors",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    /* Usa .highlight */\n  </style>\n</head>\n<body>\n  <p>Texto normal</p>\n  <p class=\"highlight\">Texto destacado</p>\n</body>\n</html>",
+              "instructions": "Usa el selector de clase .highlight para dar color amarillo (#ffd700) al texto destacado.",
+              "rewardXP": 15,
+              "validationType": "regex",
+              "hints": [
+                "El selector de clase usa punto"
+              ],
+              "difficulty": "beginner",
+              "title": "Selectores de Clase",
+              "validation": "\\.highlight\\s*\\{[^}]*color\\s*:\\s*#ffd700"
+            },
+            {
+              "options": [
+                ".main",
+                "#main",
+                "main",
+                "*main"
+              ],
+              "id": "css-quiz-selectors",
+              "type": "quiz",
+              "correctAnswer": 1,
+              "hints": [],
+              "instructions": "�C�mo se selecciona un elemento con id=\"main\"?",
+              "rewardXP": 10,
+              "explanation": "El selector de ID usa el s�mbolo # antes del nombre.",
+              "difficulty": "beginner",
+              "title": "Quiz: Selectores"
+            },
+            {
+              "id": "css-fonts",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    /* Estilos de tipograf�a */\n  </style>\n</head>\n<body>\n  <h1>T�tulo</h1>\n  <p>Primer p�rrafo</p>\n  <p>Segundo p�rrafo</p>\n</body>\n</html>",
+              "instructions": "Haz que todos los p�rrafos tengan font-size de 18px y font-family sans-serif.",
+              "rewardXP": 15,
+              "validationType": "regex",
+              "hints": [
+                "Selecciona todos los <p>"
+              ],
+              "difficulty": "beginner",
+              "title": "Tipograf�a",
+              "validation": "p\\s*\\{[^}]*font-size\\s*:\\s*18px"
+            },
+            {
+              "id": "css-id-selector",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    /* Usa #header */\n  </style>\n</head>\n<body>\n  <div id=\"header\">Mi Encabezado</div>\n  <p>Contenido</p>\n</body>\n</html>",
+              "instructions": "Crea un estilo para el elemento con id=\"header\" que tenga fondo azul (#00b4d8) y texto blanco.",
+              "rewardXP": 15,
+              "validationType": "regex",
+              "hints": [
+                "# para IDs, background-color para fondo"
+              ],
+              "difficulty": "beginner",
+              "title": "Selector por ID",
+              "validation": "#header\\s*\\{[^}]*background-color"
+            },
+            {
+              "options": [
+                "#ff0000",
+                "#00ff00",
+                "#0000ff",
+                "#ffff00"
+              ],
+              "id": "css-quiz-colors",
+              "type": "quiz",
+              "correctAnswer": 0,
+              "hints": [],
+              "instructions": "�Cu�l es el formato hexadecimal para el color rojo puro?",
+              "rewardXP": 10,
+              "explanation": "#ff0000 es rojo (ff), verde (00), azul (00).",
+              "difficulty": "beginner",
+              "title": "Quiz: Colores"
+            },
+            {
+              "id": "css-fill-selectors",
+              "type": "fill-blank",
+              "title": "Completa los Selectores",
+              "instructions": "Completa los selectores CSS para dar estilo correctamente a los elementos.",
+              "code": "<style>\n  {{blank1}} {\n    color: #00ff88;\n  }\n  {{blank2}} {\n    background: #1a1a2e;\n    padding: 20px;\n  }\n  {{blank3}} {\n    font-size: 18px;\n    font-family: sans-serif;\n  }\n</style>",
+              "blanks": [
+                {
+                  "id": "blank1",
+                  "answer": "h1",
+                  "hint": "Selector para el título principal"
+                },
+                {
+                  "id": "blank2",
+                  "answer": ".card",
+                  "hint": "Selector de clase para una tarjeta"
+                },
+                {
+                  "id": "blank3",
+                  "answer": "p",
+                  "hint": "Selector para párrafos"
+                }
+              ],
+              "hints": [
+                "h1 para títulos, .card para clase, p para párrafos"
+              ],
+              "rewardXP": 15,
+              "difficulty": "beginner"
+            }
+          ],
+          "xpReward": 50,
+          "order": 1,
+          "title": "Fundamentos CSS"
+        },
+        {
+          "id": "css-box-model",
+          "description": "Margen, padding, border y dimensiones",
+          "challenges": [
+            {
+              "id": "css-box-basic",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .card {\n      /* Estilos */\n    }\n  </style>\n</head>\n<body>\n  <div class=\"card\">Contenido</div>\n</body>\n</html>",
+              "instructions": "Crea una tarjeta con: padding 20px, border 2px solid #00ff88, border-radius 8px y fondo #1a1a2e.",
+              "rewardXP": 20,
+              "validationType": "regex",
+              "hints": [
+                "padding: 20px; border: 2px solid #00ff88;"
+              ],
+              "difficulty": "beginner",
+              "title": "Caja B�sica",
+              "validation": "\\.card\\s*\\{[^}]*padding\\s*:\\s*20px[^}]*border[^}]*solid[^}]*border-radius"
+            },
+            {
+              "id": "css-centering",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .container {\n      height: 100vh;\n      /* Centra con flexbox */\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\"><h1>Centrado Perfecto</h1></div>\n</body>\n</html>",
+              "instructions": "Centra el contenido del div horizontal y verticalmente usando Flexbox.",
+              "rewardXP": 25,
+              "validationType": "regex",
+              "hints": [
+                "display: flex; justify-content: center; align-items: center;"
+              ],
+              "difficulty": "intermediate",
+              "title": "Centrado con Flexbox",
+              "validation": "display\\s*:\\s*flex[^}]*justify-content\\s*:\\s*center[^}]*align-items\\s*:\\s*center"
+            },
+            {
+              "options": [
+                "margin",
+                "padding",
+                "border",
+                "gap"
+              ],
+              "id": "css-quiz-box",
+              "type": "quiz",
+              "correctAnswer": 1,
+              "hints": [],
+              "instructions": "�Qu� propiedad controla el espacio DENTRO del borde de un elemento?",
+              "rewardXP": 10,
+              "explanation": "Padding es el espacio interno entre el contenido y el borde.",
+              "difficulty": "beginner",
+              "title": "Quiz: Box Model"
+            },
+            {
+              "id": "css-margin-auto",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .caja {\n      width: 200px;\n      height: 100px;\n      background: #00ff88;\n      /* Centra con margin */\n    }\n  </style>\n</head>\n<body>\n  <div class=\"caja\"></div>\n</body>\n</html>",
+              "instructions": "Centra un div de 200px de ancho horizontalmente usando margin: auto.",
+              "rewardXP": 15,
+              "validationType": "regex",
+              "hints": [
+                "margin: 0 auto;"
+              ],
+              "difficulty": "beginner",
+              "title": "Centrado Horizontal",
+              "validation": "margin[^}]*auto"
+            },
+            {
+              "id": "css-padding-margin",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .card {\n      background: #1a1a2e;\n      border: 1px solid #333;\n      /* Agrega padding y margin */\n    }\n  </style>\n</head>\n<body>\n  <div class=\"card\">Contenido</div>\n</body>\n</html>",
+              "instructions": "Crea una tarjeta con 16px de padding interno y 24px de margen externo.",
+              "rewardXP": 15,
+              "validationType": "regex",
+              "hints": [
+                "padding: 16px; margin: 24px;"
+              ],
+              "difficulty": "beginner",
+              "title": "Padding vs Margin",
+              "validation": "padding[^}]*16px[^}]*margin[^}]*24px|margin[^}]*24px[^}]*padding[^}]*16px"
+            },
+            {
+              "options": [
+                "margin: 0;",
+                "margin: auto;",
+                "margin: 0 auto;",
+                "margin: center;"
+              ],
+              "id": "css-quiz-margin",
+              "type": "quiz",
+              "correctAnswer": 2,
+              "hints": [],
+              "instructions": "�Qu� valor de margin centra un elemento horizontalmente?",
+              "rewardXP": 10,
+              "explanation": "margin: 0 auto centra horizontalmente si el elemento tiene un ancho definido.",
+              "difficulty": "beginner",
+              "title": "Quiz: M�rgenes"
+            }
+          ],
+          "xpReward": 60,
+          "order": 2,
+          "title": "Modelo de Caja"
+        },
+        {
+          "id": "css-layout",
+          "description": "Flexbox y Grid para layouts profesionales",
+          "challenges": [
+            {
+              "id": "css-flexbox-nav",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    nav {\n      background: #1a1a2e;\n      /* Agrega flexbox */\n    }\n    nav a {\n      color: white;\n      text-decoration: none;\n      padding: 10px;\n    }\n  </style>\n</head>\n<body>\n  <nav><a href=\"#\">Inicio</a><a href=\"#\">Proyectos</a><a href=\"#\">Contacto</a></nav>\n</body>\n</html>",
+              "instructions": "Usa Flexbox para poner los enlaces en l�nea con espacio entre ellos.",
+              "rewardXP": 25,
+              "validationType": "regex",
+              "hints": [
+                "display: flex; justify-content: space-around;"
+              ],
+              "difficulty": "intermediate",
+              "title": "Navegaci�n Flexbox",
+              "validation": "display\\s*:\\s*flex"
+            },
+            {
+              "id": "css-grid-layout",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .grid {\n      /* Grid aqu� */\n    }\n    .card {\n      background: #1a1a2e;\n      padding: 20px;\n      border-radius: 8px;\n      color: white;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"grid\"><div class=\"card\">1</div><div class=\"card\">2</div><div class=\"card\">3</div></div>\n</body>\n</html>",
+              "instructions": "Crea un grid de 3 columnas con gap de 16px.",
+              "rewardXP": 25,
+              "validationType": "regex",
+              "hints": [
+                "display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;"
+              ],
+              "difficulty": "intermediate",
+              "title": "Grid de Tarjetas",
+              "validation": "display\\s*:\\s*grid[^}]*grid-template-columns"
+            },
+            {
+              "id": "css-animation",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .btn {\n      background: #00ff88;\n      color: #0a0a0f;\n      padding: 12px 24px;\n      border: none;\n      border-radius: 8px;\n      cursor: pointer;\n      /* Agrega transici�n */\n    }\n    .btn:hover {\n      /* Cambia color */\n    }\n  </style>\n</head>\n<body>\n  <button class=\"btn\">P�same el mouse</button>\n</body>\n</html>",
+              "instructions": "Crea una animaci�n que cambie el color del bot�n al pasar el mouse.",
+              "rewardXP": 25,
+              "validationType": "regex",
+              "hints": [
+                "transition: background 0.3s;"
+              ],
+              "difficulty": "intermediate",
+              "title": "Animaci�n Hover",
+              "validation": "transition|:hover"
+            },
+            {
+              "id": "css-flexbox-wrap",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .container {\n      display: flex;\n      /* Agrega flex-wrap */\n    }\n    .item {\n      width: 150px;\n      height: 50px;\n      background: #00b4d8;\n      margin: 5px;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\"><div class=\"item\"></div><div class=\"item\"></div><div class=\"item\"></div><div class=\"item\"></div><div class=\"item\"></div></div>\n</body>\n</html>",
+              "instructions": "Haz que los elementos flexibles se envuelvan en varias l�neas cuando no caben.",
+              "rewardXP": 20,
+              "validationType": "regex",
+              "hints": [
+                "flex-wrap: wrap;"
+              ],
+              "difficulty": "intermediate",
+              "title": "Flexbox Wrap",
+              "validation": "flex-wrap\\s*:\\s*wrap"
+            },
+            {
+              "id": "css-grid-areas",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .layout {\n      display: grid;\n      /* Usa grid-template-areas */\n      gap: 10px;\n    }\n    .header { background: #ff6b35; padding: 20px; }\n    .sidebar { background: #00b4d8; padding: 20px; }\n    .content { background: #00ff88; padding: 20px; }\n  </style>\n</head>\n<body>\n  <div class=\"layout\"><div class=\"header\">Header</div><div class=\"sidebar\">Sidebar</div><div class=\"content\">Content</div></div>\n</body>\n</html>",
+              "instructions": "Usa grid-template-areas para crear un layout con header, sidebar y content.",
+              "rewardXP": 30,
+              "validationType": "regex",
+              "hints": [
+                "grid-template-areas: 'header header' 'sidebar content';"
+              ],
+              "difficulty": "advanced",
+              "title": "Grid con �reas",
+              "validation": "grid-template-areas"
+            },
+            {
+              "options": [
+                "align-items",
+                "justify-content",
+                "flex-grow",
+                "gap"
+              ],
+              "id": "css-quiz-flex",
+              "type": "quiz",
+              "correctAnswer": 1,
+              "hints": [],
+              "instructions": "�Qu� propiedad CSS distribuye el espacio entre elementos flexibles?",
+              "rewardXP": 10,
+              "explanation": "justify-content distribuye el espacio en el eje principal.",
+              "difficulty": "intermediate",
+              "title": "Quiz: Flexbox"
+            }
+          ],
+          "xpReward": 80,
+          "order": 3,
+          "title": "Layout Moderno"
+        },
+        {
+          "id": "css-responsive",
+          "description": "Media queries y dise�o adaptable",
+          "challenges": [
+            {
+              "id": "css-media-query",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body {\n      background: #0a0a0f;\n    }\n    /* Agrega media query */\n  </style>\n</head>\n<body>\n  <h1>Responsivo</h1>\n</body>\n</html>",
+              "instructions": "Crea una media query que cambie el fondo a azul cuando la pantalla sea menor a 600px.",
+              "rewardXP": 20,
+              "validationType": "regex",
+              "hints": [
+                "@media (max-width: 600px) { body { background: blue; } }"
+              ],
+              "difficulty": "intermediate",
+              "title": "Media Query B�sica",
+              "validation": "@media[^}]*max-width[^}]*600px"
+            },
+            {
+              "id": "css-responsive-grid",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .grid {\n      display: grid;\n      /* Grid responsivo */\n      gap: 10px;\n    }\n    .item { background: #1a1a2e; padding: 20px; color: white; }\n  </style>\n</head>\n<body>\n  <div class=\"grid\"><div class=\"item\">1</div><div class=\"item\">2</div><div class=\"item\">3</div></div>\n</body>\n</html>",
+              "instructions": "Crea un grid que tenga 1 columna en m�vil y 3 en desktop.",
+              "rewardXP": 25,
+              "validationType": "regex",
+              "hints": [
+                "grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));"
+              ],
+              "difficulty": "intermediate",
+              "title": "Grid Responsivo",
+              "validation": "grid-template-columns[^}]*auto-fit|repeat[^}]*minmax"
+            },
+            {
+              "options": [
+                "px",
+                "em",
+                "rem",
+                "%"
+              ],
+              "id": "css-quiz-responsive",
+              "type": "quiz",
+              "correctAnswer": 2,
+              "hints": [],
+              "instructions": "�Qu� unidad CSS es relativa al tama�o de la fuente del elemento ra�z?",
+              "rewardXP": 10,
+              "explanation": "rem es relativo al font-size del elemento ra�z (html).",
+              "difficulty": "intermediate",
+              "title": "Quiz: Responsivo"
+            },
+            {
+              "id": "css-mobile-first",
+              "type": "code",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body {\n      background: #0a0a0f;\n      color: white;\n    }\n    /* Mobile first: agrega media query para desktop */\n  </style>\n</head>\n<body>\n  <h1>Mobile First</h1>\n</body>\n</html>",
+              "instructions": "Escribe CSS mobile-first: fondo oscuro por defecto, fondo claro para pantallas mayores a 768px.",
+              "rewardXP": 25,
+              "validationType": "regex",
+              "hints": [
+                "@media (min-width: 768px) { body { background: white; color: black; } }"
+              ],
+              "difficulty": "intermediate",
+              "title": "Mobile First",
+              "validation": "@media[^}]*min-width[^}]*768px"
+            },
+            {
+              "options": [
+                "vh",
+                "em",
+                "px",
+                "pt"
+              ],
+              "id": "css-quiz-units",
+              "type": "quiz",
+              "correctAnswer": 0,
+              "hints": [],
+              "instructions": "�Qu� unidad es relativa al viewport?",
+              "rewardXP": 10,
+              "explanation": "vh (viewport height) y vw (viewport width) son relativas al viewport.",
+              "difficulty": "beginner",
+              "title": "Quiz: Unidades"
+            }
+          ],
+          "xpReward": 70,
+          "order": 4,
+          "title": "Dise�o Responsivo"
+        }
+      ]
+    },
+    {
+      "id": "javascript-course",
+      "title": "JavaScript: Interactividad",
+      "description": "Aprende programación con JavaScript. Variables, funciones, DOM, eventos y lógica.",
+      "technology": "javascript",
+      "icon": "⚡",
+      "color": "#ffd700",
+      "finalProject": {
+        "id": "js-final-todo",
+        "title": "App de Tareas Completa",
+        "description": "Construye una aplicación de tareas con agregar, eliminar, marcar como completada y filtrar por estado.",
+        "xpReward": 300,
+        "requirements": [
+          {
+            "id": "req-1",
+            "text": "Crea un input donde el usuario escriba la tarea",
+            "hint": "<input type=\"text\" id=\"taskInput\">",
+            "validationRegex": "<input[^>]*id\\s*=\\s*\""
+          },
+          {
+            "id": "req-2",
+            "text": "Agrega un botón que añada la tarea a la lista",
+            "hint": "btn.addEventListener(\"click\", ...)",
+            "validationRegex": "addEventListener"
+          },
+          {
+            "id": "req-3",
+            "text": "Cada tarea debe poder marcarse como completada (tachada)",
+            "hint": "classList.toggle(\"completed\") o text-decoration: line-through",
+            "validationRegex": "classList|text-decoration|completed|line-through"
+          },
+          {
+            "id": "req-4",
+            "text": "Agrega un botón de eliminar para cada tarea",
+            "hint": "remove() o removeChild()",
+            "validationRegex": "\\.remove\\(|removeChild|\\.remove\\b"
+          },
+          {
+            "id": "req-5",
+            "text": "Muestra un contador de tareas pendientes",
+            "hint": "Actualiza un elemento con el número de tareas no completadas",
+            "validationRegex": "contador|count|pendiente|length"
+          },
+          {
+            "id": "req-6",
+            "text": "Permite filtrar: todas, completadas, pendientes",
+            "hint": "Botones de filtro con querySelector o getElementById",
+            "validationRegex": "filter|filterBtn|filtrar"
+          },
+          {
+            "id": "req-7",
+            "text": "Guarda las tareas en localStorage para persistencia",
+            "hint": "localStorage.setItem y localStorage.getItem",
+            "validationRegex": "localStorage"
+          }
+        ],
+        "starterCode": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>App de Tareas</title>\n  <style>\n    body { font-family: sans-serif; max-width: 500px; margin: 40px auto; padding: 20px; }\n    .task { display: flex; align-items: center; gap: 10px; padding: 8px; border-bottom: 1px solid #eee; }\n    .completed { text-decoration: line-through; opacity: 0.6; }\n    .task-actions { margin-left: auto; display: flex; gap: 5px; }\n    .filter-btn { padding: 6px 12px; border: 1px solid #ccc; cursor: pointer; }\n    .filter-btn.active { background: #00ff88; border-color: #00ff88; }\n  </style>\n</head>\n<body>\n  <h1>Mis Tareas</h1>\n\n  <!-- Input para nueva tarea -->\n  <div style=\"display:flex;gap:8px;margin-bottom:16px\">\n    <input type=\"text\" id=\"taskInput\" placeholder=\"Nueva tarea...\" style=\"flex:1;padding:8px\">\n    <button id=\"addBtn\">Agregar</button>\n  </div>\n\n  <!-- Contador -->\n  <p id=\"counter\">0 tareas pendientes</p>\n\n  <!-- Filtros -->\n  <div style=\"margin-bottom:16px\">\n    <button class=\"filter-btn active\" data-filter=\"all\">Todas</button>\n    <button class=\"filter-btn\" data-filter=\"pending\">Pendientes</button>\n    <button class=\"filter-btn\" data-filter=\"completed\">Completadas</button>\n  </div>\n\n  <!-- Lista de tareas -->\n  <ul id=\"taskList\" style=\"list-style:none;padding:0\"></ul>\n\n  <script>\n    // 1. Variables y estado\n    let tasks = [];\n\n    // 2. Agregar tarea\n    // addBtn.addEventListener('click', ...)\n\n    // 3. Marcar como completada\n\n    // 4. Eliminar tarea\n\n    // 5. Actualizar contador\n\n    // 6. Filtrar tareas\n\n    // 7. localStorage\n  </script>\n</body>\n</html>"
+      },
+      "modules": [
+        {
+          "id": "js-variables",
+          "title": "Variables y Tipos",
+          "description": "Almacenamiento de datos en JavaScript",
+          "order": 1,
+          "xpReward": 50,
+          "challenges": [
+            {
+              "id": "js-hello",
+              "type": "code",
+              "title": "Hola JavaScript",
+              "instructions": "Usa console.log() para mostrar Hola JavaScript en la consola.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    // Tu codigo aqui\n  </script>\n</body>\n</html>",
+              "hints": [
+                "console.log(\"Hola JavaScript\");"
+              ],
+              "rewardXP": 10,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "console\\.log"
+            },
+            {
+              "id": "js-variables-declare",
+              "type": "code",
+              "title": "Declarar Variables",
+              "instructions": "Declara una constante nombre y una variable edad. Muestra un saludo.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"saludo\"></p>\n  <script>\n    // Declara las variables\n  </script>\n</body>\n</html>",
+              "hints": [
+                "const nombre = ...; let edad = ...;"
+              ],
+              "rewardXP": 20,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "(const|let)\\s+nombre"
+            },
+            {
+              "id": "js-quiz-variables",
+              "type": "quiz",
+              "title": "Quiz Variables",
+              "instructions": "Cual es la diferencia entre let y const?",
+              "options": [
+                "No hay diferencia",
+                "let puede reasignarse, const no",
+                "const puede reasignarse, let no",
+                "Ambas son iguales"
+              ],
+              "correctAnswer": 1,
+              "explanation": "let permite reasignar, const no.",
+              "rewardXP": 10,
+              "difficulty": "beginner",
+              "hints": []
+            },
+            {
+              "id": "js-operators",
+              "type": "code",
+              "title": "Operadores Aritmeticos",
+              "instructions": "Crea dos variables numericas y muestra la suma, resta, multiplicacion y division.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"resultado\"></p>\n  <script>\n    // Crea las variables\n  </script>\n</body>\n</html>",
+              "hints": [
+                "Usa +, -, *, /"
+              ],
+              "rewardXP": 20,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "(const|let)\\s+\\w+\\s*=\\s*\\d+"
+            },
+            {
+              "id": "js-quiz-types",
+              "type": "quiz",
+              "title": "Quiz Tipos",
+              "instructions": "Cual NO es un tipo primitivo en JavaScript?",
+              "options": [
+                "string",
+                "number",
+                "object",
+                "boolean"
+              ],
+              "correctAnswer": 2,
+              "explanation": "object no es primitivo, es tipo de referencia.",
+              "rewardXP": 10,
+              "difficulty": "beginner",
+              "hints": []
+            }
+          ]
+        },
+        {
+          "id": "js-functions",
+          "title": "Funciones",
+          "description": "Bloques de codigo reutilizables",
+          "order": 2,
+          "xpReward": 60,
+          "challenges": [
+            {
+              "id": "js-function-basic",
+              "type": "code",
+              "title": "Funcion Basica",
+              "instructions": "Crea una funcion saludar(nombre) que retorne Hola + nombre.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"msg\"></p>\n  <script>\n    // Tu funcion aqui\n  </script>\n</body>\n</html>",
+              "hints": [
+                "function saludar(nombre) { return \"Hola, \" + nombre; }"
+              ],
+              "rewardXP": 20,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "function\\s+saludar|const\\s+saludar"
+            },
+            {
+              "id": "js-arrow-functions",
+              "type": "code",
+              "title": "Arrow Functions",
+              "instructions": "Convierte la funcion a arrow function.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    const saludar = function(nombre) {\n      return \"Hola, \" + nombre;\n    };\n  </script>\n</body>\n</html>",
+              "hints": [
+                "const saludar = (nombre) => ...;"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "=>"
+            },
+            {
+              "id": "js-quiz-scope",
+              "type": "quiz",
+              "title": "Quiz Alcance",
+              "instructions": "Que palabra clave crea una variable con alcance de bloque?",
+              "options": [
+                "var",
+                "let",
+                "global",
+                "block"
+              ],
+              "correctAnswer": 1,
+              "explanation": "let y const tienen alcance de bloque.",
+              "rewardXP": 10,
+              "difficulty": "intermediate",
+              "hints": []
+            },
+            {
+              "id": "js-default-params",
+              "type": "code",
+              "title": "Parametros por Defecto",
+              "instructions": "Crea una funcion crearUsuario(nombre, rol) con parametro por defecto.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    // Tu funcion\n  </script>\n</body>\n</html>",
+              "hints": [
+                "function crearUsuario(nombre, rol = \"estudiante\") { ... }"
+              ],
+              "rewardXP": 20,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "=\\s*[\"']"
+            },
+            {
+              "id": "js-return-value",
+              "type": "code",
+              "title": "Retornar Valores",
+              "instructions": "Crea una funcion sumar(a, b) que retorne la suma.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <script>\n    // Tu funcion\n  </script>\n</body>\n</html>",
+              "hints": [
+                "function sumar(a, b) { return a + b; }"
+              ],
+              "rewardXP": 15,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "function\\s+sumar[^}]*return"
+            },
+            {
+              "id": "js-quiz-arrow",
+              "type": "quiz",
+              "title": "Quiz Arrow",
+              "instructions": "Cual es la sintaxis correcta de arrow function?",
+              "options": [
+                "function => {}",
+                "() => {}",
+                "() -> {}",
+                "=> () {}"
+              ],
+              "correctAnswer": 1,
+              "explanation": "La sintaxis es: (params) => { cuerpo };",
+              "rewardXP": 10,
+              "difficulty": "beginner",
+              "hints": []
+            },
+            {
+              "id": "js-fill-function",
+              "type": "fill-blank",
+              "title": "Completa la Función",
+              "instructions": "Completa la función JavaScript para que funcione correctamente.",
+              "code": "function {{blank1}}(nombre) {\n  return \"Hola, \" + {{blank2}};\n}\n\nconst mensaje = {{blank3}}(\"Mundo\");\nconsole.log(mensaje);",
+              "blanks": [
+                {
+                  "id": "blank1",
+                  "answer": "saludar",
+                  "hint": "Nombre de la función que saluda"
+                },
+                {
+                  "id": "blank2",
+                  "answer": "nombre",
+                  "hint": "Parámetro de la función"
+                },
+                {
+                  "id": "blank3",
+                  "answer": "saludar",
+                  "hint": "Cómo se llama la función"
+                }
+              ],
+              "hints": [
+                "La función debe llamarse igual en la declaración y en la llamada"
+              ],
+              "rewardXP": 20,
+              "difficulty": "beginner"
+            }
+          ]
+        },
+        {
+          "id": "js-dom",
+          "title": "Manipulacion del DOM",
+          "description": "Interactua con elementos HTML desde JavaScript",
+          "order": 3,
+          "xpReward": 80,
+          "challenges": [
+            {
+              "id": "js-dom-click",
+              "type": "code",
+              "title": "Eventos Click",
+              "instructions": "Crea un boton que cambie el texto de un parrafo al hacer clic.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"texto\">Texto original</p>\n  <button id=\"btn\">Cambiar texto</button>\n  <script>\n    // Agrega el evento\n  </script>\n</body>\n</html>",
+              "hints": [
+                "btn.addEventListener(\"click\", () => { ... });"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "addEventListener"
+            },
+            {
+              "id": "js-dom-create",
+              "type": "code",
+              "title": "Crear Elementos",
+              "instructions": "Crea un boton que agregue elementos li a una lista.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <ul id=\"lista\"><li>Elemento 1</li></ul>\n  <button id=\"agregar\">Agregar</button>\n  <script>\n    // Tu codigo\n  </script>\n</body>\n</html>",
+              "hints": [
+                "document.createElement(\"li\"); lista.appendChild(nuevoLi);"
+              ],
+              "rewardXP": 30,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "createElement|appendChild"
+            },
+            {
+              "id": "js-dom-styles",
+              "type": "code",
+              "title": "Cambiar Estilos",
+              "instructions": "Crea un boton que cambie el color de fondo del body.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <button id=\"toggle\">Cambiar Fondo</button>\n  <script>\n    // Tu codigo\n  </script>\n</body>\n</html>",
+              "hints": [
+                "document.body.style.backgroundColor = \"#color\";"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "style\\.backgroundColor"
+            },
+            {
+              "id": "js-dom-input",
+              "type": "code",
+              "title": "Leer Inputs",
+              "instructions": "Crea un input y un boton que muestre el valor en un parrafo.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <input id=\"entrada\" type=\"text\">\n  <button id=\"btn\">Mostrar</button>\n  <p id=\"salida\"></p>\n  <script>\n    // Tu codigo\n  </script>\n</body>\n</html>",
+              "hints": [
+                "entrada.value obtiene el valor"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "\\.value"
+            },
+            {
+              "id": "js-dom-classlist",
+              "type": "code",
+              "title": "Manipular Clases CSS",
+              "instructions": "Crea un boton que agregue o quite la clase activo de un div.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .activo { background: #00ff88; padding: 20px; }\n  </style>\n</head>\n<body>\n  <div id=\"caja\" style=\"width:100px;height:100px;background:#333\"></div>\n  <button id=\"btn\">Toggle</button>\n  <script>\n    // Tu codigo\n  </script>\n</body>\n</html>",
+              "hints": [
+                "element.classList.toggle(\"activo\");"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "classList"
+            },
+            {
+              "id": "js-quiz-dom",
+              "type": "quiz",
+              "title": "Quiz DOM",
+              "instructions": "Que metodo selecciona un elemento por su id?",
+              "options": [
+                "querySelector",
+                "getElementById",
+                "getElementsByClass",
+                "findElement"
+              ],
+              "correctAnswer": 1,
+              "explanation": "getElementById selecciona por id.",
+              "rewardXP": 10,
+              "difficulty": "beginner",
+              "hints": []
+            }
+          ]
+        },
+        {
+          "id": "js-logic",
+          "title": "Logica y Condicionales",
+          "description": "Toma decisiones en tu codigo",
+          "order": 4,
+          "xpReward": 70,
+          "challenges": [
+            {
+              "id": "js-if-else",
+              "type": "code",
+              "title": "Condicionales",
+              "instructions": "Crea un programa que verifique si un numero es mayor, menor o igual a 10.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"resultado\"></p>\n  <script>\n    const numero = 15;\n    // Usa if/else\n  </script>\n</body>\n</html>",
+              "hints": [
+                "if (numero > 10) { ... } else { ... }"
+              ],
+              "rewardXP": 20,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "if\\s*\\(.*\\).*else"
+            },
+            {
+              "id": "js-array-methods",
+              "type": "code",
+              "title": "Metodos de Array",
+              "instructions": "Crea un array de frutas, usa forEach para mostrar cada una.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <ul id=\"lista\"></ul>\n  <script>\n    const frutas = [\"Manzana\", \"Banana\"];\n    // Usa forEach\n  </script>\n</body>\n</html>",
+              "hints": [
+                "frutas.forEach(fruta => { ... });"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "\\.forEach\\(|\\.map\\("
+            },
+            {
+              "id": "js-quiz-truthy",
+              "type": "quiz",
+              "title": "Quiz Truthy",
+              "instructions": "Cual de estos valores es FALSY en JavaScript?",
+              "options": [
+                "\"0\"",
+                "[]",
+                "0",
+                "\"false\""
+              ],
+              "correctAnswer": 2,
+              "explanation": "0, null, undefined, NaN, vacio y false son FALSY.",
+              "rewardXP": 10,
+              "difficulty": "intermediate",
+              "hints": []
+            },
+            {
+              "id": "js-switch",
+              "type": "code",
+              "title": "Switch Statement",
+              "instructions": "Crea un switch que evalue un dia de la semana.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"msg\"></p>\n  <script>\n    const dia = \"lunes\";\n    // Usa switch\n  </script>\n</body>\n</html>",
+              "hints": [
+                "switch(dia) { case \"lunes\": ... break; }"
+              ],
+              "rewardXP": 20,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "switch\\s*\\("
+            },
+            {
+              "id": "js-ternary",
+              "type": "code",
+              "title": "Operador Ternario",
+              "instructions": "Usa el operador ternario para asignar Mayor o Menor.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"resultado\"></p>\n  <script>\n    const edad = 20;\n    // Usa ternario\n  </script>\n</body>\n</html>",
+              "hints": [
+                "const resultado = edad >= 18 ? \"Mayor\" : \"Menor\";"
+              ],
+              "rewardXP": 20,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "\\?.*:.*"
+            },
+            {
+              "id": "js-filter-map",
+              "type": "code",
+              "title": "Filter y Map",
+              "instructions": "Filtra los numeros mayores a 5 y multiplica por 2.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"resultado\"></p>\n  <script>\n    const numeros = [1, 6, 3, 8, 2, 9];\n    // Usa filter y map\n  </script>\n</body>\n</html>",
+              "hints": [
+                "numeros.filter(n => n > 5).map(n => n * 2);"
+              ],
+              "rewardXP": 30,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "\\.filter\\(|\\.map\\("
+            },
+            {
+              "id": "js-quiz-loop",
+              "type": "quiz",
+              "title": "Quiz Bucles",
+              "instructions": "Que bucle se ejecuta al menos una vez?",
+              "options": [
+                "for",
+                "while",
+                "do-while",
+                "forEach"
+              ],
+              "correctAnswer": 2,
+              "explanation": "do-while ejecuta primero y luego verifica.",
+              "rewardXP": 10,
+              "difficulty": "intermediate",
+              "hints": []
+            }
+          ]
+        },
+        {
+          "id": "js-async",
+          "title": "JavaScript Asincrono",
+          "description": "Eventos temporizados y callbacks",
+          "order": 5,
+          "xpReward": 70,
+          "challenges": [
+            {
+              "id": "js-settimeout",
+              "type": "code",
+              "title": "setTimeout",
+              "instructions": "Usa setTimeout para mostrar un mensaje despues de 2 segundos.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"msg\"></p>\n  <script>\n    // Usa setTimeout\n  </script>\n</body>\n</html>",
+              "hints": [
+                "setTimeout(() => { ... }, 2000);"
+              ],
+              "rewardXP": 20,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "setTimeout"
+            },
+            {
+              "id": "js-setinterval",
+              "type": "code",
+              "title": "setInterval",
+              "instructions": "Usa setInterval para incrementar un contador cada segundo.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"contador\">0</p>\n  <script>\n    let cuenta = 0;\n    // Usa setInterval\n  </script>\n</body>\n</html>",
+              "hints": [
+                "setInterval(() => { ... }, 1000);"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "setInterval"
+            },
+            {
+              "id": "js-callback",
+              "type": "code",
+              "title": "Callbacks",
+              "instructions": "Crea una funcion operar(a, b, callback) que ejecute la funcion callback.",
+              "initialCode": "<!DOCTYPE html>\n<html>\n<body>\n  <p id=\"resultado\"></p>\n  <script>\n    // Tu funcion con callback\n  </script>\n</body>\n</html>",
+              "hints": [
+                "function operar(a, b, callback) { return callback(a, b); }"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "function\\s+operar[^}]*callback"
+            },
+            {
+              "id": "js-quiz-async",
+              "type": "quiz",
+              "title": "Quiz Asincrono",
+              "instructions": "Que funcion ejecuta codigo repetidamente a intervalos?",
+              "options": [
+                "setTimeout",
+                "setInterval",
+                "requestAnimationFrame",
+                "queueMicrotask"
+              ],
+              "correctAnswer": 1,
+              "explanation": "setInterval ejecuta repetidamente cada X ms.",
+              "rewardXP": 10,
+              "difficulty": "intermediate",
+              "hints": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "php-mysql-course",
+      "title": "PHP + MySQL: Backend",
+      "description": "Aprende desarrollo del lado del servidor con PHP y bases de datos MySQL. CRUD, autenticación y más.",
+      "technology": "php",
+      "icon": "🗄️",
+      "color": "#a855f7",
+      "finalProject": {
+        "id": "php-final-crud",
+        "title": "Sistema de Gestión de Usuarios",
+        "description": "Construye un sistema completo de CRUD de usuarios con login, registro, edición y eliminación usando PHP y MySQL.",
+        "xpReward": 400,
+        "requirements": [
+          {
+            "id": "req-1",
+            "text": "Conecta a la base de datos MySQL con mysqli_connect",
+            "hint": "mysqli_connect(\"localhost\", \"root\", \"\", \"bitflow_db\")",
+            "validationRegex": "mysqli_connect"
+          },
+          {
+            "id": "req-2",
+            "text": "Crea la tabla usuarios con id, nombre, email, password",
+            "hint": "CREATE TABLE usuarios (id INT AUTO_INCREMENT PRIMARY KEY, ...)",
+            "validationRegex": "CREATE\\s+TABLE"
+          },
+          {
+            "id": "req-3",
+            "text": "Implementa el formulario de registro de usuarios",
+            "hint": "INSERT INTO usuarios",
+            "validationRegex": "INSERT\\s+INTO"
+          },
+          {
+            "id": "req-4",
+            "text": "Implementa la lista de usuarios con SELECT",
+            "hint": "SELECT * FROM usuarios",
+            "validationRegex": "SELECT\\s+\\*\\s+FROM"
+          },
+          {
+            "id": "req-5",
+            "text": "Permite editar un usuario existente",
+            "hint": "UPDATE usuarios SET ... WHERE id = ...",
+            "validationRegex": "UPDATE\\s+usuarios"
+          },
+          {
+            "id": "req-6",
+            "text": "Permite eliminar un usuario",
+            "hint": "DELETE FROM usuarios WHERE id = ...",
+            "validationRegex": "DELETE\\s+FROM"
+          },
+          {
+            "id": "req-7",
+            "text": "Usa consultas preparadas para prevenir inyección SQL",
+            "hint": "mysqli_prepare y mysqli_stmt_bind_param",
+            "validationRegex": "mysqli_prepare|stmt_bind_param|prepared"
+          }
+        ],
+        "starterCode": "<?php\n// 1. Conexión a la base de datos\n$conn = mysqli_connect(\"localhost\", \"root\", \"\", \"bitflow_db\");\n\nif (!$conn) {\n    die(\"Error de conexión: \" . mysqli_connect_error());\n}\n\n// 2. Crear tabla si no existe\n$sql = \"CREATE TABLE IF NOT EXISTS usuarios (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    nombre VARCHAR(100) NOT NULL,\n    email VARCHAR(100) NOT NULL,\n    password VARCHAR(255) NOT NULL,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n)\";\n\nif (mysqli_query($conn, $sql)) {\n    echo \"Tabla lista<br>\";\n}\n\n// 3. Registrar nuevo usuario (POST)\nif ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {\n    // Tu código aquí\n    // INSERT INTO usuarios (nombre, email, password) VALUES (?, ?, ?)\n}\n\n// 4. Editar usuario\nif (isset($_GET['edit'])) {\n    // Tu código aquí\n    // UPDATE usuarios SET ...\n}\n\n// 5. Eliminar usuario\nif (isset($_GET['delete'])) {\n    // Tu código aquí\n    // DELETE FROM usuarios WHERE id = ?\n}\n\n// Obtener usuarios para mostrar\n$usuarios = mysqli_query($conn, \"SELECT * FROM usuarios\");\n?>\n<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Gestión de Usuarios</title>\n    <style>\n        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; }\n        table { width: 100%; border-collapse: collapse; margin: 20px 0; }\n        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }\n        th { background: #1a1a2e; color: #00ff88; }\n        form { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }\n        input, button { padding: 8px 12px; margin: 4px 0; }\n        .btn-edit { background: #00b4d8; color: white; border: none; padding: 4px 8px; cursor: pointer; }\n        .btn-delete { background: #ff4444; color: white; border: none; padding: 4px 8px; cursor: pointer; }\n    </style>\n</head>\n<body>\n    <h1>Sistema de Gestión de Usuarios</h1>\n\n    <!-- Formulario de registro -->\n    <form method=\"POST\">\n        <h2>Registrar Usuario</h2>\n        <input type=\"text\" name=\"nombre\" placeholder=\"Nombre\" required>\n        <input type=\"email\" name=\"email\" placeholder=\"Email\" required>\n        <input type=\"password\" name=\"password\" placeholder=\"Contraseña\" required>\n        <button type=\"submit\" name=\"register\">Registrar</button>\n    </form>\n\n    <!-- Lista de usuarios -->\n    <h2>Usuarios Registrados</h2>\n    <table>\n        <tr>\n            <th>ID</th>\n            <th>Nombre</th>\n            <th>Email</th>\n            <th>Acciones</th>\n        </tr>\n        <?php while ($row = mysqli_fetch_assoc($usuarios)): ?>\n        <tr>\n            <td><?= $row['id'] ?></td>\n            <td><?= $row['nombre'] ?></td>\n            <td><?= $row['email'] ?></td>\n            <td>\n                <a href=\"?edit=<?= $row['id'] ?>\"><button class=\"btn-edit\">Editar</button></a>\n                <a href=\"?delete=<?= $row['id'] ?>\" onclick=\"return confirm('¿Eliminar?')\"><button class=\"btn-delete\">Eliminar</button></a>\n            </td>\n        </tr>\n        <?php endwhile; ?>\n    </table>\n</body>\n</html>"
+      },
+      "modules": [
+        {
+          "id": "php-basics",
+          "title": "Fundamentos PHP",
+          "description": "Sintaxis básica, variables y tipos de datos",
+          "order": 1,
+          "xpReward": 50,
+          "challenges": [
+            {
+              "id": "php-hello",
+              "type": "code",
+              "title": "Hola PHP",
+              "instructions": "Usa `echo` para mostrar \"Hola PHP\" en la página.",
+              "initialCode": "<?php\n// Tu código aquí\n?>",
+              "hints": [
+                "echo \"Hola PHP\";"
+              ],
+              "rewardXP": 10,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "echo\\s*\"Hola PHP\"|echo\\s*'Hola PHP'"
+            },
+            {
+              "id": "php-variables",
+              "type": "code",
+              "title": "Variables PHP",
+              "instructions": "Crea una variable $nombre con tu nombre y muéstrala con echo usando un saludo.",
+              "initialCode": "<?php\n// Crea la variable\n// Muestra el saludo\n?>",
+              "hints": [
+                "Las variables en PHP empiezan con $",
+                "echo \"Hola $nombre\";"
+              ],
+              "rewardXP": 15,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "\\$nombre\\s*=|echo.*\\$nombre"
+            },
+            {
+              "id": "php-quiz-syntax",
+              "type": "quiz",
+              "title": "Quiz: Sintaxis PHP",
+              "instructions": "¿Cómo se inicia un bloque de código PHP?",
+              "options": [
+                "<php>",
+                "<?php",
+                "<script php>",
+                "{php}"
+              ],
+              "correctAnswer": 1,
+              "explanation": "Los bloques PHP se inician con <?php y terminan con ?>",
+              "rewardXP": 10,
+              "difficulty": "beginner"
+            },
+            {
+              "id": "php-arrays",
+              "type": "code",
+              "title": "Arrays en PHP",
+              "instructions": "Crea un array con 3 lenguajes y muéstralo con print_r().",
+              "initialCode": "<?php\n// Crea el array\n// Muéstralo\n?>",
+              "hints": [
+                "$lenguajes = [\"HTML\", \"CSS\", \"JavaScript\"];",
+                "print_r($lenguajes);"
+              ],
+              "rewardXP": 15,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "\\$\\w+\\s*=\\s*\\[.*print_r"
+            }
+          ]
+        },
+        {
+          "id": "php-control",
+          "title": "Control de Flujo",
+          "description": "Condicionales, bucles y funciones",
+          "order": 2,
+          "xpReward": 60,
+          "challenges": [
+            {
+              "id": "php-if-else",
+              "type": "code",
+              "title": "Condicionales",
+              "instructions": "Crea un condicional que verifique si una variable $edad es mayor o igual a 18.",
+              "initialCode": "<?php\n$edad = 20;\n// Usa if/else\n?>",
+              "hints": [
+                "if ($edad >= 18) { echo \"Mayor\"; } else { echo \"Menor\"; }"
+              ],
+              "rewardXP": 20,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "if\\s*\\(.*\\$edad.*\\).*else"
+            },
+            {
+              "id": "php-loop",
+              "type": "code",
+              "title": "Bucles",
+              "instructions": "Usa un bucle for para mostrar los números del 1 al 5.",
+              "initialCode": "<?php\n// Tu bucle aquí\n?>",
+              "hints": [
+                "for ($i = 1; $i <= 5; $i++) { echo $i; }"
+              ],
+              "rewardXP": 20,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "for\\s*\\(.*\\$i.*\\$i\\+\\+|foreach|while"
+            },
+            {
+              "id": "php-function",
+              "type": "code",
+              "title": "Funciones",
+              "instructions": "Crea una función `saludar($nombre)` que retorne un saludo.",
+              "initialCode": "<?php\n// Define la función\n// Llámala y muestra el resultado\n?>",
+              "hints": [
+                "function saludar($nombre) { return \"Hola $nombre\"; }"
+              ],
+              "rewardXP": 20,
+              "difficulty": "beginner",
+              "validationType": "regex",
+              "validation": "function\\s+saludar\\s*\\(.*\\$nombre.*\\)"
+            },
+            {
+              "id": "php-quiz-loop",
+              "type": "quiz",
+              "title": "Quiz: Bucles",
+              "instructions": "¿Qué bucle se ejecuta al menos una vez antes de verificar la condición?",
+              "options": [
+                "for",
+                "while",
+                "do-while",
+                "foreach"
+              ],
+              "correctAnswer": 2,
+              "explanation": "do-while ejecuta el bloque primero y luego verifica la condición.",
+              "rewardXP": 10,
+              "difficulty": "intermediate"
+            }
+          ]
+        },
+        {
+          "id": "php-mysql",
+          "title": "MySQL con PHP",
+          "description": "Conexión, consultas y operaciones CRUD",
+          "order": 3,
+          "xpReward": 100,
+          "challenges": [
+            {
+              "id": "php-db-connect",
+              "type": "code",
+              "title": "Conexión a MySQL",
+              "instructions": "Crea una conexión a MySQL usando mysqli_connect() con host \"localhost\", usuario \"root\", password \"\" y database \"test\".",
+              "initialCode": "<?php\n// Conecta a la base de datos\n$conn = mysqli_connect(/* parámetros */);\n\nif (!$conn) {\n  echo \"Error de conexión\";\n} else {\n  echo \"Conectado\";\n}\n?>",
+              "hints": [
+                "mysqli_connect(\"localhost\", \"root\", \"\", \"test\")"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "mysqli_connect\\s*\\(\"localhost\".*\"root\".*\"test\"\\)"
+            },
+            {
+              "id": "php-create-table",
+              "type": "code",
+              "title": "Crear Tabla",
+              "instructions": "Crea una tabla llamada \"usuarios\" con campos: id (INT AUTO_INCREMENT PRIMARY KEY), nombre (VARCHAR 100), email (VARCHAR 100).",
+              "initialCode": "<?php\n$conn = mysqli_connect(\"localhost\", \"root\", \"\", \"test\");\n\n// Crea la tabla con mysqli_query\n$sql = \"CREATE TABLE usuarios (...)\";\n\nif (mysqli_query($conn, $sql)) {\n  echo \"Tabla creada\";\n} else {\n  echo \"Error: \" . mysqli_error($conn);\n}\n?>",
+              "hints": [
+                "id INT AUTO_INCREMENT PRIMARY KEY, nombre VARCHAR(100), email VARCHAR(100)"
+              ],
+              "rewardXP": 30,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "CREATE\\s+TABLE\\s+usuarios.*id.*INT.*AUTO_INCREMENT.*PRIMARY.*KEY.*nombre.*VARCHAR.*email.*VARCHAR"
+            },
+            {
+              "id": "php-insert",
+              "type": "code",
+              "title": "Insertar Datos",
+              "instructions": "Usa mysqli_query() para insertar un usuario con nombre \"Juan\" y email \"juan@email.com\".",
+              "initialCode": "<?php\n$conn = mysqli_connect(\"localhost\", \"root\", \"\", \"test\");\n\n// Inserta el usuario\n$sql = \"INSERT INTO usuarios...\";\n\nif (mysqli_query($conn, $sql)) {\n  echo \"Usuario creado\";\n}\n?>",
+              "hints": [
+                "INSERT INTO usuarios (nombre, email) VALUES ('Juan', 'juan@email.com')"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "INSERT\\s+INTO\\s+usuarios.*VALUES.*Juan.*juan@email"
+            },
+            {
+              "id": "php-select",
+              "type": "code",
+              "title": "Consultar Datos",
+              "instructions": "Usa mysqli_query() para seleccionar todos los usuarios y mostrarlos con mysqli_fetch_assoc().",
+              "initialCode": "<?php\n$conn = mysqli_connect(\"localhost\", \"root\", \"\", \"test\");\n\n// Selecciona todos los usuarios\n$sql = \"SELECT * FROM usuarios\";\n$result = mysqli_query($conn, $sql);\n\n// Recorre los resultados\n?>",
+              "hints": [
+                "while ($row = mysqli_fetch_assoc($result)) { echo $row['nombre']; }"
+              ],
+              "rewardXP": 30,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "SELECT\\s+\\*\\s+FROM\\s+usuarios|mysqli_fetch_assoc"
+            },
+            {
+              "id": "php-quiz-sql",
+              "type": "quiz",
+              "title": "Quiz: SQL Básico",
+              "instructions": "¿Qué comando SQL se usa para eliminar una tabla completa?",
+              "options": [
+                "DELETE TABLE",
+                "REMOVE TABLE",
+                "DROP TABLE",
+                "ERASE TABLE"
+              ],
+              "correctAnswer": 2,
+              "explanation": "DROP TABLE elimina la tabla completa y todos sus datos.",
+              "rewardXP": 10,
+              "difficulty": "intermediate"
+            },
+            {
+              "id": "php-update",
+              "type": "code",
+              "title": "Actualizar Datos",
+              "instructions": "Crea una consulta UPDATE para cambiar el email del usuario con id=1 a \"nuevo@email.com\".",
+              "initialCode": "<?php\n$conn = mysqli_connect(\"localhost\", \"root\", \"\", \"test\");\n\n// Actualiza el usuario\n$sql = \"UPDATE usuarios...\";\n\nif (mysqli_query($conn, $sql)) {\n  echo \"Actualizado\";\n}\n?>",
+              "hints": [
+                "UPDATE usuarios SET email = 'nuevo@email.com' WHERE id = 1"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "UPDATE\\s+usuarios\\s+SET.*WHERE.*id.*=.*1"
+            },
+            {
+              "id": "php-delete",
+              "type": "code",
+              "title": "Eliminar Datos",
+              "instructions": "Crea una consulta DELETE para eliminar el usuario con id=1.",
+              "initialCode": "<?php\n$conn = mysqli_connect(\"localhost\", \"root\", \"\", \"test\");\n\n// Elimina el usuario\n$sql = \"DELETE FROM usuarios...\";\n\nif (mysqli_query($conn, $sql)) {\n  echo \"Eliminado\";\n}\n?>",
+              "hints": [
+                "DELETE FROM usuarios WHERE id = 1"
+              ],
+              "rewardXP": 25,
+              "difficulty": "intermediate",
+              "validationType": "regex",
+              "validation": "DELETE\\s+FROM\\s+usuarios\\s+WHERE.*id.*=.*1"
+            },
+            {
+              "id": "php-prepared",
+              "type": "code",
+              "title": "Consultas Preparadas",
+              "instructions": "Convierte la siguiente consulta a una consulta preparada para prevenir inyección SQL.",
+              "initialCode": "<?php\n$conn = mysqli_connect(\"localhost\", \"root\", \"\", \"test\");\n$nombre = $_GET['nombre'];\n\n// Versión vulnerable:\n// $sql = \"SELECT * FROM usuarios WHERE nombre = '$nombre'\";\n\n// Convierte a consulta preparada:\n\n?>",
+              "hints": [
+                "mysqli_prepare() con ? como placeholder",
+                "mysqli_stmt_bind_param() para vincular variables"
+              ],
+              "rewardXP": 35,
+              "difficulty": "advanced",
+              "validationType": "regex",
+              "validation": "mysqli_prepare|stmt_bind_param|prepared"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

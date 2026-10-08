@@ -33,11 +33,17 @@ export function CodeEditor({
 }: CodeEditorProps) {
   const [mounted, setMounted] = useState(false);
   const [editorValue, setEditorValue] = useState(initialCode);
+  const [prevInitialCode, setPrevInitialCode] = useState(initialCode);
   const [loadError, setLoadError] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  if (initialCode !== prevInitialCode) {
+    setPrevInitialCode(initialCode);
+    setEditorValue(initialCode);
+  }
+
   useEffect(() => {
-    setMounted(true);
+    queueMicrotask(() => setMounted(true));
     // Timeout to detect loading issues
     const timer = setTimeout(() => {
       if (!containerRef.current?.querySelector(".monaco-editor")) {
@@ -47,10 +53,6 @@ export function CodeEditor({
 
     return () => clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-    setEditorValue(initialCode);
-  }, [initialCode]);
 
   const handleChange = useCallback(
     (value: string | undefined) => {

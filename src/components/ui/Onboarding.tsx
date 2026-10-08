@@ -45,10 +45,12 @@ export function Onboarding() {
   const [showNameInput, setShowNameInput] = useState(false);
 
   useEffect(() => {
-    const seen = localStorage.getItem("bitflow-onboarding-seen");
-    if (!seen) {
-      setIsVisible(true);
-    }
+    queueMicrotask(() => {
+      const seen = localStorage.getItem("bitflow-onboarding-seen");
+      if (!seen) {
+        setIsVisible(true);
+      }
+    });
   }, []);
 
   const handleNext = () => {

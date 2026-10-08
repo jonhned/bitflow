@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { ProjectWorkspace } from "@/components/game/ProjectWorkspace";
 import { getAllCourses } from "@/lib/modules";
@@ -24,7 +24,6 @@ export default function ProjectPageWrapper() {
 function ProjectPage() {
   const params = useParams();
   const projectId = params.id as string;
-  const router = useRouter();
 
   const courses = getAllCourses();
   let project = null;
